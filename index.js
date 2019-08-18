@@ -4,9 +4,9 @@ const client = new Discord.Client();
 client.on('ready', () => {
   console.log('I am ready!');
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setActivity(`Quản lí GáyZone` ,{
+client.user.setActivity(`Na là bot`, {
     type: "STREAMING",
-    url: "https://www.twitch.tv/taiphung"})
+    url: "https://www.twitch.tv/namanhishere"})
         .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'nome'}`))
         .catch(console.error);
 });
@@ -24,7 +24,7 @@ client.on('message', message => {
     message.reply(message.author.avatarURL);
   }
   
-    if (message.content.startsWith('!kick')) {
+    if (message.content.startsWith('pi.kick')) {
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
@@ -34,30 +34,53 @@ client.on('message', message => {
         if (!channel) return;
           channel.send(`Bạn Đã bị Kick Khỏi Gáy Zone, ${member}`);
         }).catch(err => {
-          message.reply('Tôi không có quyền để kick ${member}');
+          message.reply('I was unable to kick the member');
           console.error(err);
         });
       } else {
         message.reply('That user isn\'t in this guild!');
       }
     } else {
-      message.reply('Bạn chưa ghi tên người bị kick');
+      message.reply('You didn\'t mention the user to kick!');
     }
-  if (message.content === '!ping') {
+  }
+  if (message.content === 'Nhỉ ?') {
+    message.reply('Đúng Rồi');
+  }
+  if (message.content === 'pi.ping') {
     message.reply('Pong');
   }
-     if (message.content === '!hello') {
+    if (message.content === 'pi.help') {
+    message.reply('Méo có lệnh j để mà help đâu');
+  }
+      if (message.content === 'pi.hi') {
     message.reply('hi');
   }
-      if (message.content === '!bye') {
+      if (message.content === 'pi.bye') {
     message.reply('bye');
+  }
+      if (message.content === 'pi.goodmorning') {
+    message.reply('Chúc 1 ngày tốt lành');
   }
       if (message.content === 'pi.goodnight') {
     message.reply('Chúc Ngu Ngon');
   }
+      if (message.content === 'pi.luck') {
+    message.reply('Chúc May Mắn');
+  }
+      if (message.content === 'pi.test') {
+    message.reply('Bot Hoạt Động');
+  }
+        if (message.content === 'pi.tag') {
+    message.reply(`${client.user.tag}`);
+  }
+          if (message.content === 'pi.test1') {
+    message.reply(`Test`);
+  }
 
 
-  if (message.content.startsWith('!ban')) {
+
+  if (message.content.startsWith('pi.ban')) {
     const user = message.mentions.users.first();
     if (user) {
       const member = message.guild.member(user);
