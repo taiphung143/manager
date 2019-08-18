@@ -4,9 +4,9 @@ const client = new Discord.Client();
 client.on('ready', () => {
   console.log('I am ready!');
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setActivity(`Na là bot`, {
+client.user.setActivity(`Gayzone Manager`, {
     type: "STREAMING",
-    url: "https://www.twitch.tv/namanhishere"})
+    url: "https://www.twitch.tv/taiphung"})
         .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'nome'}`))
         .catch(console.error);
 });
